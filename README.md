@@ -90,3 +90,7 @@ Este conjunto de testes automatizados visa garantir a cobertura das principais f
 * **Integração CI/CD:** Configurar um pipeline de Integração Contínua e Entrega Contínua (CI/CD) usando ferramentas como Jenkins, GitLab CI/CD ou GitHub Actions para automatizar a execução dos testes a cada alteração no código da API.
 
 Este README fornece um guia completo para configurar o ambiente e executar os testes automatizados para a API de usuários. Certifique-se de seguir os passos de instalação e configuração corretamente para garantir que os testes sejam executados com sucesso.
+
+ANTES QUE EU ME ESQUEÇA: Eu consideraria todas as apis que também acabam impactando a usuarios, por exemplo: Não se pode deletar um usuário que tem carrinho.
+
+Mas como eu acho que é basicamente para fazer um check de conhecimento, tá ótimo (to lutando contra o perfeccionismo mas preciso descansar, 4 dias focado nisso hahahaha)
