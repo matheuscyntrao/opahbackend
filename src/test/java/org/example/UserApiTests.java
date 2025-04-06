@@ -71,10 +71,8 @@ public class UserApiTests {
                 .body("_id", notNullValue())
                 .extract().response();
 
-        System.out.println(response.body());
         createdUserId = response.jsonPath().getString("_id");
         assertNotNull(createdUserId, "O ID do usuário não deve ser nulo");
-        System.out.println("ID do usuário criado: " + createdUserId);
     }
 
     @Test
