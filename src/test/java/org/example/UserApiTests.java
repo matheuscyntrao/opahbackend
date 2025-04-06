@@ -78,7 +78,6 @@ public class UserApiTests {
     @Test
     @Order(2)
     void testGetUsers() {
-
         testPostUser();
         given()
                 .header("Authorization", "Bearer " + jwtToken)

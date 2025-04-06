@@ -78,7 +78,6 @@ Este conjunto de testes automatizados visa garantir a cobertura das principais f
 * **Atualização de Usuário (PUT /users/{id}):** Testes com dados válidos para atualização e tentativas com IDs inexistentes.
 * **Exclusão de Usuário (DELETE /users/{id}):** Testes com IDs existentes e inexistentes.
 * **Autenticação JWT:** Testes para garantir que os endpoints protegidos requerem um token válido.
-* **Rate Limiting:** Um teste básico foi incluído para verificar a limitação de taxa (100 requisições por minuto).
 
 ## 📝 Próximos Passos e Melhorias:
 
