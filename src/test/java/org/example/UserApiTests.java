@@ -24,13 +24,6 @@ public class UserApiTests {
     @BeforeAll
     static void setup() {
         RestAssured.baseURI = BASE_URL;
-        try {
-            jwtToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InNlbmhhMTIzIiwiaWF0IjoxNzQzOTE0MTc2LCJleHAiOjE3NDM5MTQ3NzZ9.rRgvsYzjJZWKQ2iLixA9mQzIfGEhBKguZ8J2WErlANg";
-        }  catch(Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-        assertNotNull(jwtToken, "Falha ao obter o token JWT");
-        System.out.println("Token JWT obtido: " + jwtToken);
     }
 
     private static String getJwtToken() {
@@ -46,7 +39,7 @@ public class UserApiTests {
                 .post("/login")
                 .then()
                 .statusCode(200)
-                .body("token", notNullValue())
+                .body("authorization", notNullValue())
                 .extract().response();
 
         if (response.getStatusCode() != 200) {
@@ -54,12 +47,13 @@ public class UserApiTests {
             System.err.println("Corpo da Resposta: " + response.getBody().asString());
         }
 
-        return response.jsonPath().getString("token");
+        return response.jsonPath().getString("authorization");
     }
     @Test
     @Order(1)
     void testPostUser() {
         Random rn = new Random();
+        jwtToken = getJwtToken();
         Map<String, String> user = new HashMap<>();
         user.put("nome", "Usuário de Teste");
         user.put("email", rn.nextInt()+"@example.com");
