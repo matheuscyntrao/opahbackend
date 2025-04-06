@@ -30,8 +30,6 @@ public class UserApiTests {
         Map<String, String> loginData = new HashMap<>();
         loginData.put("email", "fulano@qa.com");
         loginData.put("password", "senha123");
-        System.out.println("opa");
-        System.out.println(loginData);
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(loginData)
